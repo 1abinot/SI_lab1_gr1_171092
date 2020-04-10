@@ -61,3 +61,42 @@ class Student {
 		return labPoints.length>8;
 	}
 }
+
+class Course{
+	class Course{
+		private List<Student> students;
+		private String courseName;
+		//Constructor
+
+
+		public Course(String courseName) {
+			this.students = new ArrayList<Student>();
+			this.courseName = courseName;
+		}
+
+		//add student
+		public void addStudent(Student student){
+			if(students.contains(student)){
+				return;
+			}else
+				students.add(student);
+		}
+
+		//delete student
+		public void deleteStudent(Student student) {
+			if (students.contains(student)) {
+				students.remove(student);
+			}else
+				System.out.println("Studentot ne postoi vo kursot");
+			return;
+		}
+
+
+		//informacii za studentot
+		public void pecati() {
+			for (int i = 0; i < students.size(); i++) {
+				System.out.println(students.get(i).index + " " + students.get(i).firstName + " " + students.get(i).lastName + " " +students.get(i).getAverage());
+			}
+		}
+	}
+}
